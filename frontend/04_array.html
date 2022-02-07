@@ -2,9 +2,6 @@
 <!-- Create N shapes programmatically  -->
 <!-- --------------------------------- -->
 
-<button onclick="createElement()">Fire function</button>
-
-
 <script>
 
 var x = 100;
@@ -16,37 +13,37 @@ function randomPosition(){
     var height = window.innerHeight;
     var x = Math.floor(Math.random()*width); //random gives # between 0 to 1
     var y = Math.floor(Math.random()*height);
-    return{x,y}
+    return(x,y);
 }
-
-function addElementToPage(element){//append to doc
+//append to doc
+function addElementToPage(element){
     document.getElementsByTagName('body')[0].appendChild(element);
 }
 
 //create elements to be added
-function createElement(position){
+function createCircle(position){
     var div = document.createElement('div');
     div.style.zIndex = '1';
     div.style.position = 'absolute';
     div.style.left = x + 'px';
-    div.style.top = y +'px';
+    div.style.top = y + 'px';
     div.style.width = '20px';
     div.style.height = '20px';
     div.style.borderRadius = '50%';
     div.style.background = 'black';
 }
-
-//
+//add multiple circles
 function addCircles(){
     var circles = []; //creates an array
     var position = null;
 
-    //create circles
-    for (var int i=0; i<10; i++){
+    //define circles
+    for (var int, i=0; i<10; i++){
         position = randomPosition();
-        circles[i] = createElement(position);
+        circles[i] = createCircle(position);
     }
-    circles.forEach((circle => addElementToPage(circle)));
+    circles.forEach(addElementToPage);
 }
-
 </script>
+
+<button onclick="addCircles()">Fire function</button>

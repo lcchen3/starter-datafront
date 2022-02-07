@@ -1,3 +1,28 @@
 <!-- --------------------------------- -->
 <!--       Add shape, move shape       -->
 <!-- --------------------------------- -->
+
+<!--comment in HTML-->
+<!--make a circle by editing shape of a block-->
+
+<div id="circle" style ="
+    z-index: 1;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: black;
+">hello</div>
+
+<button onclick="moveCircle()">Move</button>
+
+<script>
+    // create function in JS to move circle
+    var circle = document.getElementById('circle');
+
+    function moveCircle(){
+        circle.style.left = '250px';
+    }
+</script>

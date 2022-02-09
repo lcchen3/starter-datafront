@@ -12,6 +12,8 @@
 <div id="output"></div>
 
 <script> 
+var salaries = data.data;
+var salary = 0;
 
 var count = function(){
 	// ------------------------
@@ -23,7 +25,13 @@ var count = function(){
 	//	 Output result to 
 	//	 the output div.
 	// ------------------------
+	salary = Number(document.getElementById('salary').value);
+	var filtered = salaries.filter((item) => (item[18]>salary));
+	console.log(filtered.length)
 };
 
+function overx(item){
+	return item[18]>salary; //does that same thing
+}
 </script>
 </html>
